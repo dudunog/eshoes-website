@@ -6,6 +6,8 @@ import Product from "../components/Product";
 import Newsletter from "../components/Newsletter";
 import Footer from "../components/Footer";
 
+import toast, { Toaster } from "react-hot-toast";
+
 import { IoWalletOutline } from "react-icons/io5";
 import { RiTruckLine } from "react-icons/ri";
 import { IoPricetagOutline } from "react-icons/io5";
@@ -66,6 +68,23 @@ export default function Home() {
 
         <Footer />
       </main>
+
+      <Toaster
+        position="top-center"
+        gutter={8}
+        containerClassName=""
+        containerStyle={{}}
+        toastOptions={{
+          duration: 5000,
+          style: {
+            background: "#fff",
+            color: "#363636",
+          },
+          success: {
+            duration: 3000,
+          },
+        }}
+      />
     </>
   );
 }

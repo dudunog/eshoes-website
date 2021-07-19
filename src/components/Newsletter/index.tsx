@@ -2,11 +2,26 @@ import { useState } from "react";
 import Button from "../Button";
 import styles from "./styles.module.scss";
 
+import toast from "react-hot-toast";
+
 export default function Newsletter() {
   const [email, setEmail] = useState("");
 
+  const subcribed = () => {
+    toast.success("Você se inscreveu!");
+  };
+
+  const error = () => {
+    toast.error("Digite um e-mail válido");
+  };
+
   function setStorage() {
-    localStorage.setItem("newsletter:email", email);
+    if (email) {
+      localStorage.setItem("newsletter:email", email);
+      subcribed();
+    } else {
+      error();
+    }
   }
 
   return (
