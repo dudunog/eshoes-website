@@ -1,0 +1,14 @@
+.cardInfo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+
+  border: 1px solid var(--textLight);
+  padding: 0.8em 2em;
+
+  h2 {
+    font-size: 1em;
+    color: var(--blue);
+  }
+}

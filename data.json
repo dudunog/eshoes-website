@@ -1,0 +1,52 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "name": "Tênis Nike SuperRep Go 2 Masculino",
+            "value": "599,99",
+            "size": "37-45",
+            "promotion": 30,
+            "image": "https://images.lojanike.com.br/500x500/produto/tenis-m-nike-superrep-go-2-CZ0604-010-1.jpg"
+        },
+        {
+            "id": 2,
+            "name": "Tênis Nike Air Max Alpha TR 3 Masculino",
+            "value": "449,99",
+            "size": "42 e 44",
+            "promotion": 30,
+            "image": "https://images.lojanike.com.br/1024x1024/produto/tenis-nike-air-max-alpha-tr-3-masculino-CJ8058-405-1.jpg"
+        },
+        {
+            "id": 3,
+            "name": "Tênis Nike MC Trainer Masculino",
+            "value": "399,99",
+            "size": "38-44",
+            "promotion": 30,
+            "image": "https://images.lojanike.com.br/1024x1024/produto/tenis-nike-mc-trainer-CU3580-003-1.jpg"
+        },
+        {
+            "id": 4,
+            "name": "Tênis Nike Air Zoom Tempo NEXT% Masculino",
+            "value": "1.029,99",
+            "size": "37-45",
+            "promotion": 14,
+            "image": "https://images.lojanike.com.br/1024x1024/produto/tenis-nike-air-zoom-tempo-next-masculino-CI9923-004-1.jpg"
+        },
+        {
+            "id": 5,
+            "name": "Tênis Nike Air Zoom Tempo NEXT% Masculino",
+            "value": "1.199,99",
+            "size": "37-45",
+            "promotion": 5,
+            "image": "https://images.lojanike.com.br/500x500/produto/tenis-nike-air-zoom-tempo-next-masculino-CI9923-300-1.jpg"
+        },
+        {
+            "id": 6,
+            "name": "Tênis Nike Air Zoom Pegasus 38 Masculino",
+            "value": "599,99",
+            "size": "37-45",
+            "promotion": 14,
+            "image": "https://images.lojanike.com.br/500x500/produto/tenis-nike-air-zoom-pegasus-38-masculino-CW7356-101-1.jpg"
+        }
+    ]
+}

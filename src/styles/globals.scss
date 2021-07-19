@@ -1,0 +1,23 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --white: #fff;
+  --background: #f2f3f5;
+  --text: rgb(153, 153, 153);
+  --textLight: rgb(153, 153, 153, 0.3);
+  --blue: #0f233c;
+  --red: #ea1b25;
+
+  --backgroundDark: #161b22;
+  --backgroundNavbarDark: #0f1217;
+  --backgroundBoxes: #202731;
+}
+
+html,
+body {
+  font-family: "Montserrat", sans-serif;
+}
