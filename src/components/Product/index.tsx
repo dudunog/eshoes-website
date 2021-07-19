@@ -41,8 +41,8 @@ export default function Product({
           </div>
 
           <div className={styles.sell}>
-            <span>Sold: 29</span>
-            <span>Available: 12</span>
+            <span>Vendidos: 29</span>
+            <span>Disponíveis: 12</span>
           </div>
         </div>
       </div>

@@ -14,8 +14,8 @@ export default function Footer() {
         </Link>
 
         <p>
-          Acreditamos que cada dia é uma nova oportunidade <br /> de sair e de
-          se movimentar
+          Acreditamos que cada dia é uma nova oportunidade de sair e de se
+          movimentar
         </p>
 
         <hr />
