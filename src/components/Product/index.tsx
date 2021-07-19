@@ -1,3 +1,4 @@
+import Image from "next/image";
 import styles from "./styles.module.scss";
 
 type ProductProps = {
@@ -18,7 +19,13 @@ export default function Product({
     <>
       <div className={styles.card}>
         <picture>
-          <img src={image} />
+          <Image
+            width={350}
+            height={350}
+            src={image}
+            layout="fixed"
+            alt={"shoes"}
+          />
           <span>
             <strong>{promotion}%</strong>
             <br /> off

@@ -18,7 +18,7 @@ export default function Newsletter() {
 
       <div className={styles.action}>
         <input
-          type="text"
+          type="email"
           placeholder="Subscribe"
           onChange={(event) => setEmail(event.target.value)}
         />

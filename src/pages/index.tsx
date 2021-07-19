@@ -41,7 +41,7 @@ export default function Home() {
         <div className={styles.productsContainer}>
           <div className={styles.productsHeader}>
             <h1>Melhores ofertas semanais</h1>
-            <a href="/">Ver mais</a>
+            <a href="#">Ver mais</a>
           </div>
 
           <div className={styles.products}>
