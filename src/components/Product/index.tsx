@@ -1,34 +1,62 @@
+import { useContext } from "react";
 import Image from "next/image";
+
+import { CartContext } from "../../contexts/CartContext";
+
+import toast from "react-hot-toast";
+
 import styles from "./styles.module.scss";
 
 type ProductProps = {
+  id: number;
   name: string;
   value: string;
-  size: string;
+  size?: string;
   promotion: number;
   image: string;
 };
 
 export default function Product({
+  id,
   name,
   value,
   promotion,
   image,
 }: ProductProps) {
+  const { products, changeProducts } = useContext(CartContext);
+
+  const addedToCart = () => {
+    toast.success("Produto adicionado ao carrinho!");
+  };
+
+  function saveProduct() {
+    let newProducts = products.slice();
+
+    newProducts.push({
+      id,
+      name,
+      value,
+      promotion,
+      image,
+    });
+
+    changeProducts(newProducts);
+    addedToCart();
+  }
+
   return (
     <>
       <div className={styles.card}>
         <picture>
           <Image
-            width={350}
-            height={350}
+            width={250}
+            height={250}
             src={image}
-            layout="fixed"
+            layout="responsive"
             alt={"shoes"}
           />
           <span>
-            <strong>{promotion}%</strong>
-            <br /> off
+            <strong>{promotion}%</strong> off
           </span>
         </picture>
 
@@ -36,7 +64,6 @@ export default function Product({
           <h4>{name}</h4>
 
           <div className={styles.value}>
-            {/* <h4>De R$20.00</h4> */}
             <h3>Por R${value}</h3>
           </div>
 
@@ -44,6 +71,10 @@ export default function Product({
             <span>Vendidos: 29</span>
             <span>Disponíveis: 12</span>
           </div>
+
+          <button className={styles.button} onClick={saveProduct}>
+            Adicionar ao carrinho
+          </button>
         </div>
       </div>
     </>

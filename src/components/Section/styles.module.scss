@@ -36,15 +36,16 @@
   gap: 0.8em;
 }
 
-@media (max-width: 850px) {
+@media (max-width: 950px) {
+  .section {
+    padding: 0 0;
+  }
+}
+
+@media (max-width: 720px) {
   .section {
     > div {
       flex-direction: column;
-
-      > img {
-        border-bottom-right-radius: 0%;
-        max-width: 44em;
-      }
 
       > div {
         align-items: center;
@@ -52,11 +53,20 @@
       }
     }
   }
+  .description {
+    font-size: 1.3em;
+  }
+}
+
+@media (max-width: 520px) {
+  .description {
+    font-size: 1em;
+  }
 }
 
 @media (max-width: 450px) {
   .description {
-    font-size: 0.8em;
+    font-size: 0.9em;
   }
 }
 

@@ -10,44 +10,46 @@
     position: relative;
     z-index: 1;
 
-    > a:first-child {
-      text-decoration: none;
-      color: var(--white);
-      font-weight: 700;
-      font-size: 1.4em;
-      display: flex;
-      width: 10%;
-      flex-direction: row;
-      align-items: center;
-      gap: 0.9em;
-      padding-top: 1em;
-      margin-left: 0.5em;
+    > div {
+      > a:first-child {
+        text-decoration: none;
+        color: var(--white);
+        font-weight: 700;
+        font-size: 1.4em;
+        display: flex;
+        width: 10%;
+        flex-direction: row;
+        align-items: center;
+        gap: 0.9em;
+        padding-top: 1em;
+        margin-left: 0.5em;
 
-      > span {
-        display: inline-block;
-        padding: 16px 0;
-        position: relative;
-
-        &::after {
-          content: "";
-          display: block;
-          position: absolute;
-          top: 1em;
-          z-index: -1;
-          width: 1.5em;
-          height: 1.5em;
-          transform: translate(-25%, -25%) rotate(45deg);
-          background: var(--red);
-          border-radius: 0.5em;
-
-          transition: 0.4s ease;
-        }
-      }
-
-      &:hover {
         > span {
+          display: inline-block;
+          padding: 16px 0;
+          position: relative;
+
           &::after {
-            transform: translate(-25%, -25%) rotate(0deg);
+            content: "";
+            display: block;
+            position: absolute;
+            top: 1em;
+            z-index: -1;
+            width: 1.5em;
+            height: 1.5em;
+            transform: translate(-25%, -25%) rotate(45deg);
+            background: var(--red);
+            border-radius: 0.5em;
+
+            transition: 0.4s ease;
+          }
+        }
+
+        &:hover {
+          > span {
+            &::after {
+              transform: translate(-25%, -25%) rotate(0deg);
+            }
           }
         }
       }
@@ -61,6 +63,27 @@
 
     > p:last-child {
       text-align: end;
+    }
+  }
+}
+
+@media (max-width: 470px) {
+  .footer {
+    > div {
+      padding: 0 2rem;
+
+      > div {
+        display: flex;
+        justify-content: center;
+        margin-right: 5em;
+      }
+
+      > p:nth-child(2) {
+        text-align: center;
+      }
+      > p:last-child {
+        text-align: center;
+      }
     }
   }
 }

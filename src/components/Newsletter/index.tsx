@@ -1,14 +1,15 @@
 import { useState } from "react";
 import Button from "../Button";
-import styles from "./styles.module.scss";
 
 import toast from "react-hot-toast";
+
+import styles from "./styles.module.scss";
 
 export default function Newsletter() {
   const [email, setEmail] = useState("");
 
   const subcribed = () => {
-    toast.success("Você se inscreveu!");
+    toast.success("Você se inscreveu na newsletter!");
   };
 
   const error = () => {
