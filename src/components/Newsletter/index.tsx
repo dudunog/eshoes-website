@@ -35,11 +35,11 @@ export default function Newsletter() {
       <div className={styles.action}>
         <input
           type="email"
-          placeholder="Subscribe"
+          placeholder="Seu e-mail"
           autoComplete="email"
           onChange={(event) => setEmail(event.target.value)}
         />
-        <Button onClick={setStorage}>Subscribe</Button>
+        <Button onClick={setStorage}>Confirmar</Button>
       </div>
     </div>
   );

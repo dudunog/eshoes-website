@@ -1,10 +1,12 @@
 import dynamic from "next/dynamic";
 
 import FirstHeader from "../components/FirstHeader";
-import CartComponent from "../components/Cart";
+import ClientsComponent from "../components/Clients";
 import Footer from "../components/Footer";
 
-import styles from "../styles/Home.module.scss";
+import { Toaster } from "react-hot-toast";
+
+import styles from "./People.module.scss";
 
 const DynamicCartContextWithNoSSR = dynamic(
   () => import("../contexts/CartContext").then((mod) => mod.CartProvider),
@@ -20,7 +22,7 @@ const DynamicClientsContextWithNoSSR = dynamic(
   }
 );
 
-export default function Cart() {
+export default function Clients() {
   return (
     <DynamicCartContextWithNoSSR>
       <DynamicClientsContextWithNoSSR>
@@ -28,10 +30,27 @@ export default function Cart() {
           <FirstHeader />
         </header>
         <main>
-          <CartComponent />
+          <ClientsComponent />
 
           <Footer />
         </main>
+
+        <Toaster
+          position="top-center"
+          gutter={8}
+          containerClassName=""
+          containerStyle={{}}
+          toastOptions={{
+            duration: 5000,
+            style: {
+              background: "#fff",
+              color: "#363636",
+            },
+            success: {
+              duration: 3000,
+            },
+          }}
+        />
       </DynamicClientsContextWithNoSSR>
     </DynamicCartContextWithNoSSR>
   );

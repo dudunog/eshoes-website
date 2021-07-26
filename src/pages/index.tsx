@@ -22,6 +22,13 @@ const DynamicCartContextWithNoSSR = dynamic(
   }
 );
 
+const DynamicClientsContextWithNoSSR = dynamic(
+  () => import("../contexts/ClientsContext").then((mod) => mod.ClientsProvider),
+  {
+    ssr: false,
+  }
+);
+
 const productsJson = require("../../data.json");
 
 import styles from "../styles/Home.module.scss";
@@ -30,77 +37,79 @@ export default function Home() {
   return (
     <>
       <DynamicCartContextWithNoSSR>
-        <header>
-          <div className={styles.headerContainer}>
-            <FirstHeader />
-            <SecondHeader />
-          </div>
-        </header>
-        <main>
-          <Initial />
+        <DynamicClientsContextWithNoSSR>
+          <header>
+            <div className={styles.headerContainer}>
+              <FirstHeader />
+              <SecondHeader />
+            </div>
+          </header>
+          <main>
+            <Initial />
 
-          <div className={styles.cardsContainer}>
-            <CardInfo>
-              <IoWalletOutline size={30} color={"#0f233c"} />
-              <h2>Dinheiro de volta</h2>
-            </CardInfo>
-            <CardInfo>
-              <IoPricetagOutline size={30} color={"#0f233c"} />
-              <h2>Preços em conta</h2>
-            </CardInfo>
-            <CardInfo>
-              <RiTruckLine size={30} color={"#0f233c"} />
-              <h2>Entrega grátis</h2>
-            </CardInfo>
-          </div>
-
-          <div className={styles.productsContainer} id={"productsContainer"}>
-            <div className={styles.productsHeader}>
-              <h1>Melhores ofertas semanais</h1>
-              <a href="#">Ver mais</a>
+            <div className={styles.cardsContainer}>
+              <CardInfo>
+                <IoWalletOutline size={30} color={"#0f233c"} />
+                <h2>Dinheiro de volta</h2>
+              </CardInfo>
+              <CardInfo>
+                <IoPricetagOutline size={30} color={"#0f233c"} />
+                <h2>Preços em conta</h2>
+              </CardInfo>
+              <CardInfo>
+                <RiTruckLine size={30} color={"#0f233c"} />
+                <h2>Entrega grátis</h2>
+              </CardInfo>
             </div>
 
-            <div className={styles.products}>
-              {productsJson.products.map((product) => {
-                return (
-                  <Product
-                    key={product.id}
-                    id={product.id}
-                    name={product.name}
-                    value={product.value}
-                    quantity={product.quantity}
-                    size={product.size}
-                    promotion={product.promotion}
-                    image={product.image}
-                  />
-                );
-              })}
+            <div className={styles.productsContainer} id={"productsContainer"}>
+              <div className={styles.productsHeader}>
+                <h1>Melhores ofertas semanais</h1>
+                <a href="#">Ver mais</a>
+              </div>
+
+              <div className={styles.products}>
+                {productsJson.products.map((product) => {
+                  return (
+                    <Product
+                      key={product.id}
+                      id={product.id}
+                      name={product.name}
+                      value={product.value}
+                      quantity={product.quantity}
+                      size={product.size}
+                      promotion={product.promotion}
+                      image={product.image}
+                    />
+                  );
+                })}
+              </div>
             </div>
-          </div>
 
-          <Section />
+            <Section />
 
-          <Newsletter />
+            <Newsletter />
 
-          <Footer />
-        </main>
+            <Footer />
+          </main>
 
-        <Toaster
-          position="top-center"
-          gutter={8}
-          containerClassName=""
-          containerStyle={{}}
-          toastOptions={{
-            duration: 5000,
-            style: {
-              background: "#fff",
-              color: "#363636",
-            },
-            success: {
-              duration: 3000,
-            },
-          }}
-        />
+          <Toaster
+            position="top-center"
+            gutter={8}
+            containerClassName=""
+            containerStyle={{}}
+            toastOptions={{
+              duration: 5000,
+              style: {
+                background: "#fff",
+                color: "#363636",
+              },
+              success: {
+                duration: 3000,
+              },
+            }}
+          />
+        </DynamicClientsContextWithNoSSR>
       </DynamicCartContextWithNoSSR>
     </>
   );

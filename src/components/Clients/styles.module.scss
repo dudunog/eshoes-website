@@ -1,0 +1,146 @@
+.container {
+  max-width: 1092px;
+  margin: 0 auto;
+  padding: 0 4em;
+
+  display: flex;
+  gap: 5em;
+  margin-top: 3em;
+}
+
+.clientsContainer {
+  width: 80%;
+}
+
+.clientsTitle {
+  > h1 {
+    font-weight: 900;
+    font-size: 2em;
+    color: var(--blue);
+  }
+}
+
+.clientContainer {
+}
+
+.clientDescription {
+  > div {
+    display: flex;
+    align-items: center;
+    gap: 2em;
+
+    > div {
+      > h2 {
+        font-weight: 600;
+        font-size: 1.3em;
+        color: var(--blue);
+      }
+    }
+  }
+}
+
+.separator {
+  width: 100%;
+  height: 1px;
+  background-color: var(--text);
+  opacity: 0.5;
+  margin: 1em 0;
+}
+
+.createClientContainer {
+  width: 30%;
+}
+
+.createClientDescription {
+  > h2 {
+    color: var(--blue);
+  }
+}
+
+.createClientForm {
+  margin-top: 1.5em;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+
+  > div:nth-child(1),
+  div:nth-child(2),
+  div:nth-child(3),
+  div:nth-child(4) {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3em;
+
+    input {
+      padding: 0.6em 1em;
+      border: 1px solid var(--textLight);
+    }
+  }
+}
+
+.createClientAction {
+  margin-top: 1em;
+  display: flex;
+  justify-content: center;
+
+  > button:last-child {
+    border: none;
+    border-radius: 0.4em;
+    padding: 0.8em 1.2em;
+    color: var(--white);
+    background-color: var(--backgroundGreen);
+
+    transition: ease 0.2s;
+
+    &:hover {
+      opacity: 0.5;
+      cursor: pointer;
+    }
+  }
+}
+
+@media (max-width: 1070px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .clientsContainer {
+    width: 100%;
+  }
+
+  .createClientContainer {
+    width: 100%;
+  }
+
+  .createClientForm {
+    div {
+      padding: 0 3em;
+    }
+  }
+}
+
+@media (max-width: 520px) {
+  .createClientForm {
+    div {
+      padding: 0 1em;
+    }
+  }
+}
+
+@media (max-width: 415px) {
+  .container {
+    padding: 0 2em;
+  }
+
+  .createClientForm {
+    div {
+      padding: 0 0;
+    }
+  }
+}
+
+@media (max-width: 300px) {
+  .container {
+    padding: 0 0.5em;
+  }
+}

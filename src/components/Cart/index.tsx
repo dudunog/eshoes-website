@@ -2,7 +2,6 @@ import { useContext } from "react";
 import Image from "next/image";
 
 import { CartContext } from "../../contexts/CartContext";
-import Footer from "../Footer";
 
 import styles from "./styles.module.scss";
 
@@ -90,14 +89,12 @@ export default function Cart() {
 
       <div className={styles.cartDescription}>
         <p>
-          <strong>Quantidade:</strong> {totalProducts}
+          Quantidade: <strong>{totalProducts}</strong>
         </p>
         <p>
-          <strong>Valor total:</strong> R$ {totalValueProducts}
+          Valor total: <strong>R$ {totalValueProducts}</strong>
         </p>
       </div>
-
-      <Footer />
     </>
   );
 }
