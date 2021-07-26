@@ -1,6 +1,7 @@
 import dynamic from "next/dynamic";
 
-import Header from "../components/Header";
+import FirstHeader from "../components/FirstHeader";
+import SecondHeader from "../components/SecondHeader";
 import Initial from "../components/Initial";
 import CardInfo from "../components/CardInfo";
 import Section from "../components/Section";
@@ -30,7 +31,10 @@ export default function Home() {
     <>
       <DynamicCartContextWithNoSSR>
         <header>
-          <Header />
+          <div className={styles.headerContainer}>
+            <FirstHeader />
+            <SecondHeader />
+          </div>
         </header>
         <main>
           <Initial />
@@ -64,6 +68,7 @@ export default function Home() {
                     id={product.id}
                     name={product.name}
                     value={product.value}
+                    quantity={product.quantity}
                     size={product.size}
                     promotion={product.promotion}
                     image={product.image}

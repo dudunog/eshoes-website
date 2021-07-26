@@ -12,6 +12,7 @@ type ProductProps = {
   name: string;
   value: string;
   size?: string;
+  quantity: number;
   promotion: number;
   image: string;
 };
@@ -20,6 +21,8 @@ export default function Product({
   id,
   name,
   value,
+  size,
+  quantity = 1,
   promotion,
   image,
 }: ProductProps) {
@@ -32,15 +35,32 @@ export default function Product({
   function saveProduct() {
     let newProducts = products.slice();
 
-    newProducts.push({
-      id,
-      name,
-      value,
-      promotion,
-      image,
-    });
+    var isProductExists = newProducts.some((el) => el.id === id);
 
-    changeProducts(newProducts);
+    if (isProductExists) {
+      var product = newProducts.find((product) => product.id === id);
+
+      newProducts.map((value, index, self) => {
+        if (value.id === product.id) {
+          self[index].quantity += 1;
+        }
+      });
+
+      changeProducts(newProducts);
+    } else {
+      newProducts.push({
+        id,
+        name,
+        value,
+        quantity,
+        size,
+        promotion,
+        image,
+      });
+
+      changeProducts(newProducts);
+    }
+
     addedToCart();
   }
 
@@ -53,7 +73,8 @@ export default function Product({
             height={250}
             src={image}
             layout="responsive"
-            alt={"shoes"}
+            title={name}
+            alt={name}
           />
           <span>
             <strong>{promotion}%</strong> off
@@ -64,7 +85,7 @@ export default function Product({
           <h4>{name}</h4>
 
           <div className={styles.value}>
-            <h3>Por R${value}</h3>
+            <h3>Por R$ {value}</h3>
           </div>
 
           <div className={styles.sell}>

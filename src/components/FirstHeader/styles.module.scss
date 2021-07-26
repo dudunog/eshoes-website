@@ -1,4 +1,4 @@
-.headerContainer {
+.firstHeader {
   > div:first-child {
     height: 4.4em;
     display: flex;
@@ -85,86 +85,10 @@
       }
     }
   }
-
-  > div:last-child {
-    display: flex;
-    padding: 0.9em 0;
-    box-shadow: 0 0 60px rgba(0, 0, 0, 0.05);
-
-    > div {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      width: 100%;
-
-      max-width: 992px;
-      margin: 0 auto;
-      padding: 0 4rem;
-
-      > div:nth-child(1) {
-        button {
-          display: flex;
-          align-items: center;
-          gap: 1.2em;
-          padding: 0.7em 2em;
-          border: none;
-          border-radius: 3px;
-          color: var(--blue);
-          font-weight: 500;
-
-          transition: filter 0.2s;
-
-          img {
-            max-width: 50%;
-          }
-
-          &:hover {
-            filter: brightness(0.8);
-            cursor: pointer;
-          }
-        }
-      }
-
-      > div:nth-child(2) {
-        display: flex;
-        flex-direction: row;
-        gap: 3em;
-
-        a {
-          color: var(--blue);
-          font-weight: 600;
-          text-decoration: none;
-          transition: color 0.2s;
-
-          &:hover {
-            color: var(--text);
-          }
-        }
-      }
-    }
-  }
-}
-
-@media (max-width: 750px) {
-  .headerContainer {
-    div:first-child {
-      > div {
-        a {
-        }
-      }
-    }
-
-    div:last-child {
-      > div {
-        flex-direction: column;
-        margin: 1em;
-      }
-    }
-  }
 }
 
 @media (max-width: 415px) {
-  .headerContainer {
+  .firstHeader {
     > div:last-child {
       > div {
         padding: 0 0;

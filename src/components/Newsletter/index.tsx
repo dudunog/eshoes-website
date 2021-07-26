@@ -36,6 +36,7 @@ export default function Newsletter() {
         <input
           type="email"
           placeholder="Subscribe"
+          autoComplete="email"
           onChange={(event) => setEmail(event.target.value)}
         />
         <Button onClick={setStorage}>Subscribe</Button>
