@@ -17,12 +17,17 @@
 
 .action {
   display: flex;
-  color: var(--blue);
+  align-items: center;
 
-  input {
-    width: 20em;
-    padding: 0 1em;
-    border: 1px solid var(--textLight);
+  > form {
+    display: flex;
+    justify-content: center;
+
+    > input {
+      width: 20em;
+      padding: 0 1em;
+      border: 1px solid var(--textLight);
+    }
   }
 }
 
@@ -42,8 +47,11 @@
     width: 100%;
     justify-content: center;
 
-    input {
-      width: 60%;
+    > form {
+      width: 100%;
+      > input {
+        width: 60%;
+      }
     }
   }
 }
@@ -51,13 +59,16 @@
 @media (max-width: 660px) {
   .action {
     flex-direction: column;
-    gap: 1em;
 
-    input {
-      width: 100%;
-      padding: 1em 1em;
+    > form {
+      flex-direction: column;
+      align-items: center;
+      gap: 1em;
+
+      input {
+        width: 100%;
+        padding: 1em 1em;
+      }
     }
-
-    align-items: center;
   }
 }

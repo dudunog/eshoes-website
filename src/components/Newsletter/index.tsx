@@ -16,7 +16,9 @@ export default function Newsletter() {
     toast.error("Digite um e-mail válido");
   };
 
-  function setStorage() {
+  function setStorage(event) {
+    event.preventDefault();
+
     if (email) {
       localStorage.setItem("newsletter:email", email);
       subcribed();
@@ -33,13 +35,17 @@ export default function Newsletter() {
       </div>
 
       <div className={styles.action}>
-        <input
-          type="email"
-          placeholder="Seu e-mail"
-          autoComplete="email"
-          onChange={(event) => setEmail(event.target.value)}
-        />
-        <Button onClick={setStorage}>Confirmar</Button>
+        <form id="form" onSubmit={setStorage}>
+          <input
+            type="email"
+            name="email"
+            placeholder="Seu e-mail"
+            autoComplete="email"
+            form="form"
+            onChange={(event) => setEmail(event.target.value)}
+          />
+          <Button type="submit">Confirmar</Button>
+        </form>
       </div>
     </div>
   );

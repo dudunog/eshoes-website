@@ -29,8 +29,8 @@ export default function FirstHeader() {
             <a>
               <Image
                 src={people}
-                width={30}
-                height={35}
+                width={33}
+                height={38}
                 title="Clientes"
                 alt="Clientes"
               />
